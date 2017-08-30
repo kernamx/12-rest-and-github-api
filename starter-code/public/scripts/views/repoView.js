@@ -12,8 +12,11 @@ var app = app || {};
     $about.show().siblings().hide();
   };
 
-  // TODO: Remember that new Handlebars template? Let's compile it!
+  // DONE: Remember that new Handlebars template? Let's compile it!
   // Save the result in this `render` variable.
+
+  var source = $('#repo-template').html();
+  var render = Handlebars.compile(source);
 
   repoView.index = function() {
     ui();
@@ -25,4 +28,5 @@ var app = app || {};
   };
 
   module.repoView = repoView;
+  // module.repoObj = repoObj; //
 })(app);
