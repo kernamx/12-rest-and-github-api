@@ -15,12 +15,12 @@ var app = app || {};
     //       populate it with the response from Github before you call the callback.
 
     $.ajax({
-        url: 'https://api.github.com/user/repos',
-        method: 'GET',
-        headers: {
-          Authorization: `token ${githubToken}`
-        }
-      })
+      url: 'https://api.github.com/user/repos',
+      method: 'GET',
+      headers: {
+        Authorization: `token ${githubToken}`
+      }
+    })
       .then(
         data => data.forEach(repo => repos.all.push(repo),
         err => console.error(err)
